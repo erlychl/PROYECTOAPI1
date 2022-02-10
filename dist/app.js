@@ -15,6 +15,8 @@ var _clinicas = _interopRequireDefault(require("./routes/clinicas"));
 
 var _sucursales = _interopRequireDefault(require("./routes/sucursales"));
 
+var _doctor = _interopRequireDefault(require("./routes/doctor"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -27,12 +29,13 @@ app.use((0, _morgan["default"])('dev'));
 app.use((0, _express.json)());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "HEAD, PUT, POST, GET, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With,Content - Type, Accept");
+  res.header("Access-Control-Allow-Methods", "HEAD, PUT, POST, GET, DELETE,OPTIONS");
   next();
 }); //Routes
 
 app.use('/api/clinicas', _clinicas["default"]);
 app.use('/api/sucursales', _sucursales["default"]);
+app.use('/api/doctor', _doctor["default"]);
 var _default = app;
 exports["default"] = _default;
